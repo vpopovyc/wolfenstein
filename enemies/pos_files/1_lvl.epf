@@ -1,0 +1,2 @@
+pos_x: 10 pos_y: 11 dir_x: -1 dir_y: 0 texture: officer
+pos_x: 10 pos_y: 11 dir_x: -1 dir_y: -1 texture: officer
