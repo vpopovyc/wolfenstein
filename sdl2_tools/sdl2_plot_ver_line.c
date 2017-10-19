@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sdl2_plotVerLine.c                                 :+:      :+:    :+:   */
+/*   sdl2_plot_ver_line.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpopovyc <vpopovyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "sdl2_tools.h"
+#include "sdl2_tools.h"
 
-void                sdl2_plotVerLine(t_sdl2_tools *my_sdl2, int x, int y1, int y2, int color)
+void	sdl2_plot_ver_line(t_sdl2_tools *my_sdl2, int x, int y1, int y2)
 {
 	uint32_t *pixels;
 
 	pixels = my_sdl2->pixels;
-    while (y1 != y2)
-    {
-    	pixels[y1 * 800 + x] = color;
-        ++y1;
-    }
+	while (y1 != y2)
+	{
+		pixels[y1 * WWIDTH + x] = my_sdl2->color;
+		++y1;
+	}
 }
