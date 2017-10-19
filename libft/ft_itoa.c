@@ -33,7 +33,7 @@ char			*ft_itoa(size_t v, size_t b)
 	if (b < 2 || b > 16)
 		return (NULL);
 	ln = ft_len(v, b);
-    st = ft_strnew(ln);
+	st = ft_strnew(ln);
 	while (--ln >= 0)
 	{
 		st[ln] = ((v % b) > 9) ? ((v % b) - 10 + 'A') : ((v % b) + '0');

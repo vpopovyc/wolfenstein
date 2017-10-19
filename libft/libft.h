@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include "get_next_line.h"
 
-size_t  ft_strlen(char *s);
+size_t	ft_strlen(char *s);
 int		ft_strequ(char *s1, char *s2);
 void	ft_ppdel(char ***sv);
 void	*ft_memset(void *b, int c, size_t len);
@@ -31,6 +31,6 @@ char	*ft_strncpy(char *dst, char *src, size_t len);
 char	*ft_strdup(char *s1);
 char	*ft_strnew(size_t size);
 char	**ft_strsplit(char *s, char c);
-
+int		ft_atoi(const char *str);
 
 #endif
