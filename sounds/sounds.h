@@ -21,10 +21,10 @@
 # define PISTOL_PEEP "sounds/pistol.wav"
 # define SABER_PEEP "sounds/saber.wav"
 
-typedef enum 	e_peep_types
+typedef enum	e_peep_types
 {
 	get_peep,
-	pistol, 
+	pistol,
 	blaster,
 	saber
 }				t_peep_types;

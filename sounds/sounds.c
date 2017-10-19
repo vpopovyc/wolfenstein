@@ -34,23 +34,23 @@ static inline Uint8		**audio_pos(void)
 	return (pos);
 }
 
-void	my_audio_callback(void *userdata, Uint8 *stream, int len)
+void					my_audio_callback(void *userdata, Uint8 *stream, int l)
 {
 	Uint32 tmp_len;
 
-	tmp_len = len;
+	tmp_len = l;
 	if (*audio_len() == 0)
 		return ;
 	else if (tmp_len > *audio_len())
-		len = *audio_len();
+		l = *audio_len();
 	userdata = NULL;
-	SDL_memcpy(stream, *audio_pos(), len);
-	SDL_MixAudio(stream, *audio_pos(), len, SDL_MIX_MAXVOLUME);
-	*audio_pos() += len;
-	*audio_len() -= len;
+	SDL_memcpy(stream, *audio_pos(), l);
+	SDL_MixAudio(stream, *audio_pos(), l, SDL_MIX_MAXVOLUME);
+	*audio_pos() += l;
+	*audio_len() -= l;
 }
 
-void	play_wav_track(SDL_AudioSpec *wav_spec)
+void					play_wav_track(SDL_AudioSpec *wav_spec)
 {
 	if (SDL_OpenAudio(wav_spec, NULL) < 0)
 		return ;
@@ -62,7 +62,7 @@ void	play_wav_track(SDL_AudioSpec *wav_spec)
 	}
 }
 
-void	sound(char *track)
+void					sound(char *track)
 {
 	static Uint8			*wav_buffer;
 	static Uint32			wav_length;
