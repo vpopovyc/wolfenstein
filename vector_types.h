@@ -13,22 +13,22 @@
 #ifndef __VECTOR_TYPES_H
 # define __VECTOR_TYPES_H
 
-typedef struct      s_float2
+typedef	struct		s_float2
 {
-    float           x;
-    float           y;
-}                   t_float2;
+	float			x;
+	float			y;
+}					t_float2;
 
-typedef struct      s_double2
+typedef	struct		s_double2
 {
-    double          x;
-    double          y;
-}                   t_double2;
+	double			x;
+	double			y;
+}					t_double2;
 
-typedef struct      s_int2 
+typedef	struct		s_int2
 {
-    int             x;
-    int             y;
-}                   t_int2;
+	int				x;
+	int				y;
+}					t_int2;
 
 #endif

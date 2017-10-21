@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __RAY_ON_MAP_H
+# define __RAY_ON_MAP_H
 
-#ifndef __RAY_ON_MAP
-# define __RAY_ON_MAP
-
-typedef struct 	s_ray_on_map
+typedef	struct	s_ray_on_map
 {
-    t_int2      step;
-    t_double2   side_dist;
+	t_int2		step;
+	t_double2	side_dist;
 }				t_ray_on_map;
 
 #endif

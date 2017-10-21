@@ -13,13 +13,13 @@
 #ifndef __RAY_INFO_H
 # define __RAY_INFO_H
 
-typedef struct 	s_ray_info
+typedef	struct	s_ray_info
 {
-    t_double2   pos;
-    t_double2   dir;
-    t_double2   delta_dist;
-    double      cam_x;
-    t_int2      map;
+	t_double2	pos;
+	t_double2	dir;
+	t_double2	delta_dist;
+	double		cam_x;
+	t_int2		map;
 }				t_ray_info;
 
 #endif

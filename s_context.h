@@ -10,20 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef __S_CONTEXT_H
 # define __S_CONTEXT_H
 
-
 # include "vector_types.h"
 
-typedef struct 	s_context t_context;
-
-typedef struct 	s_context
+typedef	struct	s_context
 {
-    t_int2      map;
-    int 		side;
-    int 		door_id;
+	t_int2		map;
+	int			side;
+	int			door_id;
 }				t_context;
 
 #endif
