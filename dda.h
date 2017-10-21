@@ -13,18 +13,17 @@
 #ifndef __DDA_H
 # define __DDA_H
 
-typedef struct 	s_dda
+typedef	struct	s_dda
 {
-	t_stack   	doors_stack;
-    double      perp_wall_dist;
-    int         hit;
-    int         door_hit;
-    int         side;
+	t_stack		doors_stack;
+	double		perp_wall_dist;
+	int			hit;
+	int			door_hit;
+	int			side;
 }				t_dda;
 
-
-void   			run_dda(t_ray_info *ray,
-						t_ray_on_map *mapped_ray,
+void			run_dda(t_ray_info *ray,
+						t_ray_on_map *maped_ray,
 						t_dda *dda, t_appcore *appcore);
 
 #endif
