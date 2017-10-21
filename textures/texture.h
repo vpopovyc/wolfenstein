@@ -16,7 +16,7 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
-# include "../lodepng.h"
+# include "../lodepng/lodepng.h"
 
 /*
 ** Max number of different textures that can be loaded
@@ -46,6 +46,40 @@
 ** Loads all scpecified textures in memory
 */
 
-uint32_t                    **load_textures(void);
+uint32_t	**load_textures(void);
+
+/*
+** Paths
+*/
+
+/*
+** Doors
+*/
+
+# define DOOR_PATH_1	"./textures/refs/doors/door3.png"
+
+/*
+** Objects
+*/
+
+# define OBJ_PATH_1		"./textures/refs/sprites/barrel.png"
+
+/*
+** Walls
+*/
+
+# define WALL_PATH_1	"./textures/refs/worldaround/cell_w_skeleton.png"
+# define WALL_PATH_2	"./textures/refs/worldaround/greybrickw-cell.png"
+# define WALL_PATH_3	"./textures/refs/worldaround/greybrickw-swastika.png"
+# define WALL_PATH_4	"./textures/refs/worldaround/wall6.png"
+
+/*
+** Enemies
+*/
+
+# define ENEM_PATH_1_1	"./textures/refs/enemies/officer_front.png"
+# define ENEM_PATH_1_2	"./textures/refs/enemies/officer_back.png"
+# define ENEM_PATH_1_3	"./textures/refs/enemies/officer_side_left.png"
+# define ENEM_PATH_1_4	"./textures/refs/enemies/officer_side_right.png"
 
 #endif
