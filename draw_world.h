@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DRAW_WORLD_h
-# define __DRAW_WORLD_h
+#ifndef __DRAW_WORLD_H
+# define __DRAW_WORLD_H
 
-typedef struct 		s_draw_world
+typedef	struct		s_draw_world
 {
-    t_ray_info		*ray;
-    t_ray_on_map	*mapped_ray;
-    t_dda			*dda;
-    t_int2          render_range;
+	t_ray_info		*ray;
+	t_ray_on_map	*mapped_ray;
+	t_dda			*dda;
+	t_int2			render_range;
 }					t_draw_world;
 
-typedef struct  	s_draw_world_info
+typedef struct		s_draw_world_info
 {
-    int             lineHeight;
-    int             drawStart;
-    int             drawEnd;
-    int             texNum;
-    double          wallX;
-    t_int2          tex;
-    int             d;
-    int 			x;
-    uint32_t        color;
+	int				line_height;
+	int				draw_start;
+	int				draw_end;
+	int				tex_num;
+	double			wall_x;
+	t_int2			tex;
+	int				d;
+	int				x;
+	uint32_t		color;
 }					t_draw_world_info;
 
-#endif 
+#endif
