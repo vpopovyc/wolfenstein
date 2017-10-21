@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eventManagment.h                                   :+:      :+:    :+:   */
+/*   event_managment.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpopovyc <vpopovyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __EVENTMANAGMENT_H
-# define __EVENTMANAGMENT_H
+#ifndef __EVENT_MANAGMENT_H
+# define __EVENT_MANAGMENT_H
 
 # include "door/door.h"
 # include "sdl2_tools/sdl2_tools.h"
@@ -47,12 +47,16 @@
 # define UPBOUND	(HFWIDTH + 8)
 # define LWBOUND	(HFWIDTH - 8)
 
-typedef struct		s_mouse	
+typedef	struct		s_mouse
 {
 	t_int2			pos;
-	double			rotY;
+	double			rot_y;
 }					t_mouse;
 
-void				eventManagment(t_game *myGame, t_sdl2_tools *mySDL2, t_door *door, int worldMap[][map_width]);
+void				event_managment(t_game *my_game, t_sdl2_tools *sdl,
+								t_door *door, int world_map[][map_width]);
+
+void				ps_managment(register SDL_Event *event,
+								register t_game *my_game, uint8_t *keystate);
 
 #endif
