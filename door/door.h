@@ -20,7 +20,6 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-
 # define MAX_DOORS_NUMBER 32
 # define DOORINFO_COLUMNS 8
 
@@ -28,7 +27,7 @@
 ** Door types that can be used
 */
 
-typedef enum 		e_door_types
+typedef	enum		e_door_types
 {
 	door3 = 0
 }					t_door_types;
@@ -37,17 +36,17 @@ typedef enum 		e_door_types
 ** Base door-entry struct
 */
 
-typedef struct      s_door
+typedef	struct		s_door
 {
-    uint32_t        textureToDraw[128 * 128];
-    int             texture_index;
-    int             currentStripe;
-    t_int2          pos;
-    t_int2			time;
-    double 			dist;
-    t_bool          isOpen;
-    t_bool			isActive;
-    t_bool			isNearest;
-}                   t_door;
+	uint32_t		texture_draw[16384];
+	int				texture_index;
+	int				draw_stripe;
+	t_int2			pos;
+	t_int2			time;
+	double			dist;
+	t_bool			is_open;
+	t_bool			is_active;
+	t_bool			is_nearest;
+}					t_door;
 
 #endif

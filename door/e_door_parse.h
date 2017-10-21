@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef __E_DOOR_PARSE_H
 # define __E_DOOR_PARSE_H
 
@@ -18,9 +17,9 @@
 ** Infile data position
 */
 
-typedef enum 		e_door_indexes
+typedef	enum		e_door_indexes
 {
-	x = 1, 
+	x = 1,
 	y = 3,
 	status = 5,
 	texture = 7

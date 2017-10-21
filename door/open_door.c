@@ -21,9 +21,9 @@ static inline int		find_closest_door(t_door *door)
 	i = 0;
 	while (i < MAX_DOORS_NUMBER)
 	{
-		if (door[i].isNearest) 
+		if (door[i].is_nearest)
 		{
-			door[i].isNearest = !door[i].isNearest;
+			door[i].is_nearest = !door[i].is_nearest;
 			return (i);
 		}
 		++i;
@@ -31,31 +31,28 @@ static inline int		find_closest_door(t_door *door)
 	return (-1);
 }
 
-char	open_door(t_game *myGame, t_door *door, int map[][map_width])
+char					open_door(t_game *my_game, t_door *door,
+													int map[][map_width])
 {
-	int 	d;
-	static signed char status;
+	int					d;
+	static signed char	status;
 
 	d = find_closest_door(door);
-	printf("event\n");
 	if ((d != -1 && door[d].dist < 1.5) || status)
 	{
 		if (d == -1)
 			d = status - 1;
 		else
 			status = d + 1;
-		door[d].isActive = 1;
-		door[d].currentStripe += door[d].currentStripe + 1 <= 128  ? 1 : 0;
-		if (door[d].currentStripe == 128)
-		{
-			door[d].isActive = 0;
-			door[d].isOpen = 1;
-		}
-		if (door[d].isOpen == 1)
+		door[d].is_active = 1;
+		door[d].draw_stripe += door[d].draw_stripe + 1 <= 128 ? 1 : 0;
+		door[d].is_active = door[d].draw_stripe == 128 ? 0 : door[d].is_active;
+		door[d].is_open = door[d].draw_stripe == 128 ? 1 : 0;
+		if (door[d].is_open == 1)
 		{
 			map[door[d].pos.x][door[d].pos.y] = 0;
-			door[d].time.x = myGame->time.x;
-			door[d].time.y = myGame->time.x + 5000;
+			door[d].time.x = my_game->time.x;
+			door[d].time.y = my_game->time.x + 5000;
 			status = 0;
 			return (0);
 		}
