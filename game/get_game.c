@@ -12,7 +12,7 @@
 
 #include "game.h"
 
-t_game 	 *get_game(signed char mode, size_t info)
+t_game	*get_game(signed char mode, size_t info)
 {
 	t_game *new_game;
 
@@ -25,7 +25,7 @@ t_game 	 *get_game(signed char mode, size_t info)
 	new_game->plane.x = 0;
 	new_game->plane.y = 0.66;
 	new_game->ps_density = 1;
- 	if (mode == multy_player)
+	if (mode == multy_player)
 		get_game_from_server(new_game);
 	else
 		get_game_from_file(new_game, info);
