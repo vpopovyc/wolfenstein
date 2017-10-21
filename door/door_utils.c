@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 #include "door.h"
-#include "../app_base.h"
+#include "../app_core.h"
 #include "../vector_types.h"
 #include "../stack.h"
 #include "../s_context.h"
@@ -88,7 +88,7 @@ int		parse_doors_stack(t_draw_world *worldrender, t_appcore *appcore)
 	door_id = context.door_id;
 	pop(&(worldrender->dda->doors_stack));
 	texture_id = appcore->door[door_id].texture_index + DOORS_INDX;
-	fill_texture_to_draw(appcore->myTexture[texture_id],
+	fill_texture_to_draw(appcore->my_texture[texture_id],
 						appcore->door[door_id].texture_draw,
 						appcore->door[door_id].draw_stripe);
 	return (door_id);

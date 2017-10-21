@@ -14,7 +14,7 @@
 # define __SDL2_TOOLS_H
 
 # include <SDL2/SDL.h>
-# include "../app_base.h"
+# include "../app_core.h"
 
 /*
 ** Struct to keep all needed data together

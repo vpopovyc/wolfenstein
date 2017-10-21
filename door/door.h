@@ -44,9 +44,9 @@ typedef	struct		s_door
 	t_int2			pos;
 	t_int2			time;
 	double			dist;
-	t_bool			is_open;
-	t_bool			is_active;
-	t_bool			is_nearest;
+	T_BOOL			is_open;
+	T_BOOL			is_active;
+	T_BOOL			is_nearest;
 }					t_door;
 
 #endif

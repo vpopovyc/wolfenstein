@@ -23,7 +23,7 @@
 ** App base info
 */
 
-# include "../app_base.h"
+# include "../app_core.h"
 
 /*
 ** Vector types

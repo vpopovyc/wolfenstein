@@ -22,10 +22,10 @@ void	sdl2_release(t_sdl2_tools *my_sdl2)
 	SDL_DestroyRenderer(my_sdl2->renderer);
 	SDL_DestroyWindow(my_sdl2->window);
 	SDL_DestroyTexture(my_sdl2->texture);
-	free(pixels);
+	free(my_sdl2->pixels);
 	my_sdl2->renderer = NULL;
 	my_sdl2->window = NULL;
 	my_sdl2->texture = NULL;
-	pixels = NULL;
+	my_sdl2->pixels = NULL;
 	free(my_sdl2);
 }
