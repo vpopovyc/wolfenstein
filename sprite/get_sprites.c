@@ -17,25 +17,24 @@
 ** gets data from server that represents all sprites on current lvl
 */
 
-static inline void    get_sprites_from_server(t_sprite_container *sprites)
+static inline void	get_sprites_from_server(t_sprite_container *sprites)
 {
-    (void)sprites;
+	(void)sprites;
 }
-
 
 /*
 ** primary routine to get data about sprites
 */
 
-t_sprite_container    *get_sprites(signed char mode, size_t info)
+t_sprite_container	*get_sprites(signed char mode, size_t info)
 {
-    t_sprite_container *sprites;
+	t_sprite_container *sprites;
 
-    sprites = malloc(sizeof(t_sprite_container));
-    ft_memset(sprites, 0, sizeof(t_sprite_container));
-    if (mode == 1)
-        get_sprites_from_server(sprites);
-    else
-        get_sprites_from_file(sprites, info);
-    return (sprites);
+	sprites = malloc(sizeof(t_sprite_container));
+	ft_memset(sprites, 0, sizeof(t_sprite_container));
+	if (mode == 1)
+		get_sprites_from_server(sprites);
+	else
+		get_sprites_from_file(sprites, info);
+	return (sprites);
 }
