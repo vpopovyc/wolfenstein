@@ -17,24 +17,24 @@
 ** gets data from server that represents all sprites on current lvl
 */
 
-static inline void    get_enemies_from_server(t_enemy *enemies)
+static inline void		get_enemies_from_server(t_enemy *enemies)
 {
-    (void)enemies;
+	(void)enemies;
 }
 
 /*
 ** primary routine to get data about enemies
 */
 
-t_enemy		*get_enemies(signed char mode, size_t info)
+t_enemy					*get_enemies(signed char mode, size_t info)
 {
-    t_enemy *enemies;
+	t_enemy *enemies;
 
-    enemies = malloc(sizeof(t_enemy) * MAX_NUMBER_ENEMIES);
-    ft_memset(enemies, 0, sizeof(t_enemy) * MAX_NUMBER_ENEMIES);
-    if (mode == 1)
-        get_enemies_from_server(enemies);
-    else
-        get_enemies_from_file(enemies, info);
-    return (enemies);
+	enemies = malloc(sizeof(t_enemy) * MAX_NUMBER_ENEMIES);
+	ft_memset(enemies, 0, sizeof(t_enemy) * MAX_NUMBER_ENEMIES);
+	if (mode == 1)
+		get_enemies_from_server(enemies);
+	else
+		get_enemies_from_file(enemies, info);
+	return (enemies);
 }

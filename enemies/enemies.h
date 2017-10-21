@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef __ENEMIES_H
 # define __ENEMIES_H
 
@@ -30,23 +29,23 @@
 ** Enemy types that can be used
 */
 
-typedef enum        e_enemy_types
+typedef	enum		e_enemy_types
 {
-    officer = 0
-}                   t_enemytypes;
+	officer = 0
+}					t_enemytypes;
 
 /*
 ** Infile data position
 */
 
-typedef enum        e_parse_indexes
+typedef	enum		e_parse_indexes
 {
-    pos_x = 1,
-    pos_y = 3,
-    dir_x = 5, 
-    dir_y = 7,
-    texture = 9
-}                   t_parse_indexes;
+	pos_x = 1,
+	pos_y = 3,
+	dir_x = 5,
+	dir_y = 7,
+	texture = 9
+}					t_parse_indexes;
 
 /*
 ** Enemy entry
