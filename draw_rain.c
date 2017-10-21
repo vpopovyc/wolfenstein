@@ -24,7 +24,7 @@ static inline int		*ps_size(void)
 	return (ps_size);
 }
 
-static inline void	emit(t_ps *ps)
+static inline void		emit(t_ps *ps)
 {
 	int i;
 
@@ -45,7 +45,7 @@ static inline void	emit(t_ps *ps)
 	*ps_size() += 1;
 }
 
-static inline void	de_emit(t_ps **ps)
+static inline void		de_emit(t_ps **ps)
 {
 	t_ps *temp_ps;
 
@@ -58,7 +58,7 @@ static inline void	de_emit(t_ps **ps)
 	*ps_size() -= 1;
 }
 
-void	render_ps(t_ps *ps, t_sdl2_tools *mySDL2)
+void					render_ps(t_ps *ps, t_sdl2_tools *sdl)
 {
 	int i;
 
@@ -67,21 +67,25 @@ void	render_ps(t_ps *ps, t_sdl2_tools *mySDL2)
 		i = 0;
 		while (i < NODE_SIZE)
 		{
-			sdl2_put_pixel(mySDL2, ps->parts[i].color, ps->parts[i].pos.x, ps->parts[i].pos.y);
-			sdl2_put_pixel(mySDL2, ps->parts[i].color, ps->parts[i].pos.x, ps->parts[i].pos.y + 2);
-			sdl2_put_pixel(mySDL2, ps->parts[i].color, ps->parts[i].pos.x, ps->parts[i].pos.y + 3);
-			ps->parts[i].pos.y += ps->parts[i].pos.y < 550 ? rand() % 42 : -(rand() % 400);
+			sdl2_put_pixel(sdl, ps->parts[i].color,
+							ps->parts[i].pos.x, ps->parts[i].pos.y);
+			sdl2_put_pixel(sdl, ps->parts[i].color,
+							ps->parts[i].pos.x, ps->parts[i].pos.y + 2);
+			sdl2_put_pixel(sdl, ps->parts[i].color,
+							ps->parts[i].pos.x, ps->parts[i].pos.y + 3);
+			ps->parts[i].pos.y += ps->parts[i].pos.y < 550 ? rand() % 42 :
+															-(rand() % 400);
 			++i;
 		}
 		ps = ps->next;
 	}
 }
 
-void	*next_ps_iter(void *arg)
+void					*next_ps_iter(void *arg)
 {
-	static t_ps	*ps;
-	int		i;
-	t_appcore *appcore;
+	static t_ps		*ps;
+	int				i;
+	t_appcore		*appcore;
 
 	appcore = (t_appcore*)arg;
 	if (ps == NULL)
@@ -98,23 +102,7 @@ void	*next_ps_iter(void *arg)
 		*ps_size() += 1;
 	}
 	emit(ps);
-	while (*ps_size() > appcore->myGame->ps_density)
+	while (*ps_size() > appcore->my_game->ps_density)
 		de_emit(&ps);
 	pthread_exit((void*)ps);
 }
-
-void	procced_ps(t_appcore *appcore)
-{
-	pthread_create(&(appcore->ps_thread), NULL, next_ps_iter, (void*)appcore);
-}
-
-void	draw_ps(pthread_t *ps_thread, t_sdl2_tools *mySDL2)
-{
-	t_ps *ps;
-
-	pthread_join(*ps_thread, (void*)&ps);
-	if (ps == NULL)
-		return ;
-	render_ps(ps, mySDL2);
-}
-

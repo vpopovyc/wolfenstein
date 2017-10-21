@@ -18,7 +18,7 @@
 # define NODE_SIZE 16
 # define MAX_NODES 64
 
-typedef struct 	s_part
+typedef	struct	s_part
 {
 	t_int2		pos;
 	uint32_t	color;
@@ -28,13 +28,15 @@ typedef struct 	s_part
 ** Plotnikov Sergey
 */
 
-typedef struct  s_ps
+typedef	struct	s_ps
 {
 	t_part		*parts;
 	struct s_ps	*next;
 }				t_ps;
 
-void	procced_ps(t_appcore *appcore);
-void	draw_ps(pthread_t *ps_thread, t_sdl2_tools *mySDL2);
+void			procced_ps(t_appcore *appcore);
+void			draw_ps(pthread_t *ps_thread, t_sdl2_tools *sdl);
+void			*next_ps_iter(void *arg);
+void			render_ps(t_ps *ps, t_sdl2_tools *sdl);
 
 #endif
