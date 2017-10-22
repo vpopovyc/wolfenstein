@@ -39,10 +39,19 @@ void				map_ray_to_world(t_ray_info *ray, t_ray_on_map *mapped_ray);
 void				draw_world(t_appcore *appcore, t_draw_world *worldrender,
 														int x, int door_id);
 
+void				set_render_range(t_draw_world *worldrender, int xmin,
+																int xmax);
+
+void				create_appcore(t_appcore *appcore);
+
+void				create_worldrender(t_draw_world *worldrender);
+
 typedef	struct		s_engine
 {
 	t_appcore		appcore;
 	t_draw_world	worldrender;
 }					t_engine;
+
+void				create_engine(t_engine *engine);
 
 #endif
